@@ -1,0 +1,13 @@
+[Unit]
+Description=e-ink display driver (placeholder)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=lucas
+WorkingDirectory=/home/lucas/e-ink
+ExecStart=/home/lucas/e-ink/.venv/bin/eink hello
+
+[Install]
+WantedBy=multi-user.target

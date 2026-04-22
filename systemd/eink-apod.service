@@ -1,0 +1,11 @@
+[Unit]
+Description=Render NASA Astronomy Picture of the Day to the Inky Impression
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=lucas
+WorkingDirectory=/home/lucas/e-ink
+EnvironmentFile=-/home/lucas/e-ink/.env
+ExecStart=/home/lucas/e-ink/.venv/bin/eink apod

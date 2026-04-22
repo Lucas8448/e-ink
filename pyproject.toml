@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "einkd"
+version = "0.1.0"
+description = "Minimal driver and CLI for the Pimoroni Inky Impression 7.3\"."
+requires-python = ">=3.11"
+dependencies = [
+  "inky[rpi]==2.1.0",
+  "Pillow>=10,<12",
+]
+
+[project.scripts]
+eink = "einkd.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
